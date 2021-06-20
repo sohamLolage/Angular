@@ -1,0 +1,10 @@
+<h2>Enter thr emp name</h2>
+<input type="text" name="empName" [(ngModel)]="ename">
+
+
+
+
+<app-child [empName]="ename" (send)="onSend($event)"></app-child>
+
+<br>
+<h2>{{fromChild}}</h2>

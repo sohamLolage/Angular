@@ -1,0 +1,79 @@
+<div class="container my-5">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" name="firstname" [(ngModel)]="contact.firstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lastname" [(ngModel)]="contact.lastname">
+        </div>
+
+        
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" name="city" [(ngModel)]="contact.city">
+            </div>
+            <div class="form-group">
+                <label for="street">Street</label>
+                <input type="text" class="form-control" name="street" [(ngModel)]="contact.street">
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pin Code</label>
+                <input type="text" class="form-control" name="pincode" [(ngModel)]="contact.pincode">
+            </div>
+       
+
+        <div >
+            <button type="submit" class="btn btn-primary" >Submit</button>
+           </div>
+           <!-- <div *ngIf="this.flag">
+            <button type="submit" class="btn btn-primary" (ngSubmit)="onUpdate(contactForm.value)">Update</button>
+           </div> -->
+
+       
+    </form>
+</div>
+<!-- <div class="container">
+    <pre>
+        {{contact | json}}
+    </pre>
+
+    <h4>Submitted</h4>
+    <pre>
+        {{value | json }}
+    </pre>
+</div> -->
+
+
+<div class="container" >
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Street</th>
+            <th scope="col">city</th>
+            <th scope="col">pincode</th>
+            <th scope="col"></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of user;  let i = index">
+                <th scope="row">{{u.firstname}}</th>
+                <td>{{u.lastname}}</td>
+                <td>{{u.street}}</td>
+                <td>{{u.city}}</td>
+                <td>{{u.pincode}}</td>
+
+                <td><button type="button" class="btn btn-info"(click)="onEdit(u)">Edit</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="onDelete(u)">Delete</button></td>
+            </tr>
+
+                 
+        </tbody>
+      </table>
+
+
+</div>

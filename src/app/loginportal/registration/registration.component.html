@@ -1,0 +1,42 @@
+<div class="container w-50 mt-5">
+    <form (ngSubmit)=(onSubmit())>
+        <div class="mb-3">
+            <label for="UserName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="userName"
+            [(ngModel)]="user.userName" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password"
+            [(ngModel)]="user.password" required>
+          </div>
+          <div class="mb-3">
+            <label for="UserName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="firstName"
+            [(ngModel)]="user.firstName" required>
+          </div>
+          <div class="mb-3">
+            <label for="UserName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="lastName"
+            [(ngModel)]="user.lastName" required>
+          </div>
+        <div class="mb-3 ">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+          [(ngModel)]="user.email" required>
+          
+        </div>
+        <div class="mb-3">
+            <label for="UserName" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="mobile"
+            [(ngModel)]="user.mobile" required>
+          </div>
+        
+        <div>
+            <button type="submit" class="btn btn-info">Submit</button>
+            <button type="reset"  class="btn btn-primary" style="margin-left: 10px;">Reset</button>
+        </div>
+        
+      </form>
+    
+</div>

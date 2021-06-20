@@ -1,0 +1,74 @@
+<!-- string pipe -->
+
+<h5> {{name}}</h5>
+<h5> {{name | lowercase}}</h5> 
+<h5> {{name | uppercase}}</h5>
+<h5> {{msg | titlecase}}</h5>
+<!-- slice proper work  as substring 
+first agruments start index second arguments last index (exclude) -->
+ <h5>{{name |slice:2:4}}</h5>
+ <h5>{{person | json}}</h5>
+
+ <!-- Number pipe -->
+ <h5>{{6.789 | number:'1.2-3'}}</h5>
+ <h5>{{6.789 | number:'3.4-5'}}</h5>
+ <h5>{{6.789 | number:'3.1-2'}}</h5>
+
+ <h5>{{0.5 | percent}}</h5>
+ <!-- currency -->
+ <h5>{{50 | currency}}</h5>
+ <h5>{{50 | currency: 'GBP' :'code'}}</h5>
+ <h5>{{50 | currency:'INR'}}</h5>
+
+ <!-- Date  -->
+ <h5>{{date}}</h5>
+ <h5>{{date | date:'short'}}</h5>
+ <h5>{{date | date:'shortDate'}}</h5>
+ <h5>{{date | date:'shortTime'}}</h5>
+
+<!-- custom pipes -->
+<h5>{{name | custom}}</h5>
+
+<h5>{{2 | exponential :3}}</h5>
+
+
+<!-- Serach Example -->
+
+<div class="container">
+    <input [(ngModel)]="searchText" placeholder="search text goes here">
+    
+<table class="table table-hover">
+     <thead>
+        <tr>
+            <th>Index</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            <th>Date of Birth</th>
+            <th>Fulltime Status</th>
+                      
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of  employees | searchFilter:searchText;let i=index;">
+                    <td>{{i+1}}</td>
+                    <td>{{employee.code}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.gender}}</td>
+                        <td>{{employee.annualSalary}}</td>
+                        <td>{{employee.dateOfBirth}}</td>
+                        <td>{{employee.fulltime}}</td>
+                        
+            </tr>
+            
+        </tbody>
+</table>       
+      
+ </div>
+
+
+
+<h1>{{100 | discountFilter:10}}</h1>
+
+

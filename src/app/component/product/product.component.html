@@ -1,0 +1,66 @@
+<div class="container">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Discounted Price</th>
+                <th>Offer Price</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of  products ;let i=index;">
+
+                <td>{{product.pid}}</td>
+                <td>{{product.pname}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.dics }}%</td>
+                <td>{{product.price | discountFilter:product.dics}}</td>
+                <td>{{product.price -(product.price | discountFilter:product.dics)}}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Practice  of select values -->
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+        <label>select the program</label><br>
+        <select name="program" [(ngModel)]="selectedValue">
+            <option *ngFor="let p of program" [value]="p.id" >{{p.name}}</option>
+
+        </select><br>
+       
+        <input [(ngModel)]="selectedRadio" type="radio" name="gender" id="1" [value]="this.radio[0]" >male
+        <input  type="radio" name="gender" id="2" [value]="this.radio[1]" >female
+        <br>
+
+
+
+        <div  *ngFor="let c of checkboxes; let i = index " >
+            <input
+             type="checkbox" name="addr" [value]="c.name" (click)="onCheck(i)" >{{c.name}} 
+        </div>
+           
+    
+            
+        
+        
+        <!-- <input type="checkbox" name="addr" id="abad">abad -->
+        <br>
+        <button type="submit">Submit</button>
+
+    </form>
+
+
+
+</div>
